@@ -11,9 +11,9 @@ Inspired by https://github.com/AsmrProg-YT/100-days-of-javascript
 You can type the path manually on your browser
 For example:
 ```
-https://zdiqim7.github.io/latihan-web/hometown/hometown.html
+https://zdiqim7.github.io/latihan-web/03-odin-recipes/index.html
 ```
-And if you want to preview the other project, let say weather-app simply replace /hometown/hometown.html with the corresponding folder name and HTML file name.
+And if you want to preview the other project, let say weather-app simply replace /03-odin-recipes/index.html with the corresponding folder name and HTML file name.
 
 or you can just run it locally but for what? kwwkwkwk
 
