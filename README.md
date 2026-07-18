@@ -1,33 +1,19 @@
-# latihan-web 🚀
+## About This Repo 
 
-Tempat latihan dan dokumentasi perjalanan belajar Web Development saya — dari dasar hingga praktek. Fokus utama: HTML5, CSS3, dan JavaScript modern (Vanilla JS). Proyek ini masih on progress, jadi expect update rutin ✨, so the recap should contains somehitng like: what i've learm, the short information, intro & outro, etc
+Cuman Tempat saya menaruh latihan dan dokumentasi perjalanan belajar Web Development saya yang berisi kumpulan project-project kecil (Statis) dan tantangan yang saya gunakan untuk mempelajari dasar-dasar pengembangan web: struktur halaman, styling responsif, interaksi DOM, aynsc, model api data, pola dasar JavaScript dan lainnya. 
 
----
+Inspired by https://github.com/AsmrProg-YT/100-days-of-javascript
 
-## Badges / Tech Stack
 
-![HTML5](https://img.shields.io/badge/HTML5-%23E34F26.svg?&style=for-the-badge&logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/CSS3-%231572B6.svg?&style=for-the-badge&logo=css3&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-%23F7DF1E.svg?&style=for-the-badge&logo=javascript&logoColor=black)
-![Status](https://img.shields.io/badge/status-on%20progress-yellow?style=for-the-badge)
-
----
-
-## Deskripsi singkat
-
-Latihan ini berisi kumpulan proyek kecil dan tantangan yang saya gunakan untuk mempelajari dasar-dasar pengembangan web: struktur halaman, styling responsif, interaksi DOM, dan pola dasar JavaScript. Tujuannya untuk meningkatkan skill lewat praktek langsung, this include latihan web gw sendiri, task from freecodecamp, and the documentation of my learning with the odin project.
-
-this include latihan web gw sendiri, task from freecodecamp, and the documentation of my learning with the odin project
-  
 ---
 
 ## Cara Menjalankan/Preview 
 You can type the path manually on your browser
-For example, if you want to preview the Hometown page, just use the following URL:
+For example:
 ```
 https://zdiqim7.github.io/latihan-web/hometown/hometown.html
 ```
-To acces other pages, simply replace /hometown/hometown.html with the corresponding folder name and HTML file name.
+And if you want to preview the other project, let say weather-app simply replace /hometown/hometown.html with the corresponding folder name and HTML file name.
 
 or you can just run it locally but for what? kwwkwkwk
 
@@ -45,6 +31,8 @@ or you can just run it locally but for what? kwwkwkwk
    - Install extension "Live Server" (jika belum).
    - Buka file `index.html` dari folder latihan yang ingin dilihat.
    - Klik kanan → "Open with Live Server" atau klik tombol "Go Live" di pojok kanan bawah.
+  
+4. Tech stack : HTML5, CSS3, JavaScript modern (Vanilla JS).
 
 
 ---
@@ -60,9 +48,10 @@ Beberapa hal yang sudah saya pelajari dan praktikkan:
 - DOM manipulation, event handling, form handling ✅
 - LocalStorage untuk menyimpan data sederhana ✅
 - Debugging & developer tools (console, network) ✅
-- Accessibility awareness (label, alt text) — masih belajar ♿
+- Accessibility awareness (label, alt text) ✅
+- CSS Specificity ✅
 
-Proyek masih berjalan — banyak fitur kecil dan refactor yang akan datang. Lihat folder `docs/` untuk catatan belajar dan referensi.
+Proyek masih berjalan — banyak fitur kecil dan refactor yang akan datang (harusnya).
 
 ---
 
