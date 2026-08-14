@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>QR Tool — Generate & Decode</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsQR.min.js"></script>
+<style>
+    :root {
+        --bg: #f5f6f8;
+        --card: #ffffff;
+        --border: #dde1e6;
+        --text: #1c2128;
+        --muted: #5b6470;
+        --accent: #2b6cb0;
+        --ok: #1a7f37;
+        --err: #c0342c;
+    }
+    * { box-sizing: border-box; }
+    body {
+        font-family: -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        margin: 0;
+        padding: 32px 16px;
+    }
+    .wrap { max-width: 480px; margin: 0 auto; }
+    h1 { font-size: 20px; margin-bottom: 4px; }
+    p.sub { color: var(--muted); margin-top: 0; font-size: 14px; }
+
+    .card {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        padding: 20px;
+    }
+
+    .tabs { display: flex; gap: 8px; margin-bottom: 16px; }
+    .tabs button {
+        flex: 1;
+        padding: 10px;
+        border: 1px solid var(--border);
+        background: var(--card);
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 14px;
+    }
+    .tabs button.active { background: var(--accent); color: #fff; border-color: var(--accent); }
+
+    .section { display: none; }
+    .section.active { display: block; }
+
+    label { display: block; font-size: 13px; font-weight: 600; margin-bottom: 6px; }
+    textarea, input[type=text], input[type=file] {
+        width: 100%;
+        padding: 10px 12px;
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        font-size: 14px;
+        font-family: inherit;
+    }
+    textarea { resize: vertical; min-height: 70px; }
+    textarea:focus, input[type=text]:focus { outline: 2px solid var(--accent); border-color: transparent; }
+
+    button.primary {
+        width: 100%;
+        padding: 12px;
+        background: var(--accent);
+        color: #fff;
+        border: none;
+        border-radius: 8px;
+        font-size: 15px;
+        cursor: pointer;
+        margin-top: 14px;
+    }
+    button.primary:hover { background: #245a92; }
+
+    #qr-output { display: flex; justify-content: center; margin-top: 18px; }
+    #download-link {
+        display: none;
+        text-align: center;
+        margin-top: 10px;
+        color: var(--accent);
+        font-size: 14px;
+        text-decoration: none;
+    }
+    #download-link.show { display: block; }
+
+    .drop-zone {
+        border: 2px dashed var(--border);
+        border-radius: 10px;
+        padding: 24px;
+        text-align: center;
+        color: var(--muted);
+        font-size: 14px;
+        cursor: pointer;
+        margin-bottom: 14px;
+    }
+    .drop-zone.dragover { border-color: var(--accent); color: var(--accent); }
+
+    #preview-img {
+        max-width: 100%;
+        max-height: 220px;
+        display: none;
+        margin: 10px auto;
+        border-radius: 8px;
+    }
+    #preview-img.show { display: block; }
+
+    .result {
+        display: none;
+        margin-top: 14px;
+        padding: 12px;
+        border-radius: 8px;
+        font-size: 14px;
+        word-break: break-word;
+    }
+    .result.show { display: block; }
+    .result.ok { background: #e6f4ea; color: var(--ok); }
+    .result.err { background: #fbeae8; color: var(--err); }
+    .result a { color: inherit; font-weight: 600; }
+
+    .header-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 12px;
+    }
+    #lang-toggle {
+        flex-shrink: 0;
+        padding: 6px 12px;
+        border: 1px solid var(--border);
+        background: var(--card);
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 13px;
+        color: var(--text);
+    }
+    #lang-toggle:hover { border-color: var(--accent); color: var(--accent); }
+</style>
+</head>
+<body>
+<div class="wrap">
+    <div class="header-row">
+        <div>
+            <h1 id="txt-title">QR Tool</h1>
+            <p class="sub" id="txt-subtitle">Buat QR code dari teks/link, atau baca QR code dari gambar yang diupload.</p>
+        </div>
+        <button type="button" id="lang-toggle">EN</button>
+    </div>
+
+    <div class="card">
+        <div class="tabs">
+            <button type="button" id="tab-generate" class="active">Generate</button>
+            <button type="button" id="tab-decode">Decode</button>
+        </div>
+
+        <!-- ===== SECTION: GENERATE ===== -->
+        <div id="section-generate" class="section active">
+            <label for="input-text" id="txt-label-input">Link atau teks</label>
+            <textarea id="input-text" placeholder="Contoh: https://youtube.com/watch?v=xxxx, atau teks bebas apa saja"></textarea>
+
+            <button type="button" id="btn-generate" class="primary">Buat QR Code</button>
+
+            <div id="qr-output"></div>
+            <a id="download-link" download="qrcode.png">Download QR Code (.png)</a>
+        </div>
+
+        <!-- ===== SECTION: DECODE ===== -->
+        <div id="section-decode" class="section">
+            <div id="drop-zone" class="drop-zone">
+                Klik untuk pilih gambar QR code, atau drag & drop di sini
+            </div>
+            <input type="file" id="input-file" accept="image/*" style="display:none">
+
+            <img id="preview-img" alt="Preview gambar QR yang diupload">
+
+            <div id="decode-result" class="result"></div>
+        </div>
+    </div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
