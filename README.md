@@ -4,7 +4,6 @@ Cuman Tempat saya menaruh latihan dan dokumentasi perjalanan belajar Web Develop
 
 Inspired by https://github.com/AsmrProg-YT/100-days-of-javascript
 
-
 ---
 
 ## Cara Menjalankan/Preview 
@@ -15,29 +14,11 @@ https://zdiqim7.github.io/latihan-web/03-odin-recipes/index.html
 ```
 And if you want to preview the other project, let say weather-app simply replace /03-odin-recipes/index.html with the corresponding folder name and HTML file name.
 
-or you can just run it locally but for what? kwwkwkwk
-
-1. Clone repo:
-   ```bash
-   git clone https://github.com/zDiqim7/latihan-web.git
-   ```
-
-2. Buka folder project di VS Code:
-   ```bash
-   code latihan-web
-   ```
-
-3. Jalankan dengan Live Server (VS Code extension):
-   - Install extension "Live Server" (jika belum).
-   - Buka file `index.html` dari folder latihan yang ingin dilihat.
-   - Klik kanan → "Open with Live Server" atau klik tombol "Go Live" di pojok kanan bawah.
-  
-4. Tech stack : HTML5, CSS3, JavaScript modern (Vanilla JS).
-
+Tech stack : HTML5, CSS3, JavaScript modern (Vanilla JS).
 
 ---
 
-## Catatan / Progress ✍️
+## Catatan / Progress 
 
 Beberapa hal yang sudah saya pelajari dan praktikkan:
 - Struktur HTML semantik (header, main, footer) ✅
@@ -53,12 +34,8 @@ Beberapa hal yang sudah saya pelajari dan praktikkan:
 
 Proyek masih berjalan — banyak fitur kecil dan refactor yang akan datang (harusnya).
 
----
-
-## Kontribusi
-
 Ini repo personal untuk latihan. Jika kamu ingin memberi saran atau PR (contoh: perbaikan dokumentasi), welcome! 🙏
 
 ---
 
-Terima kasih sudah mampir — semoga berguna! 💡
+Tata~
