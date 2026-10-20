@@ -1,0 +1,136 @@
+@keyframes fadeup {
+  from {
+    opacity: 0;
+    transform: translateY(40px)
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-up {
+  animation: fadeup 0.6s ease-out both;
+}
+
+.img-hero {
+  animation: fadeup 0.6s ease-out both;
+  transition: tranform 0.4s ease-in-out;
+}
+
+#typewriter-text::after {
+  content: "";
+  display: inline-block;
+  height: 1em;
+  margin-left: 0.15em;
+  border-right: 2px solid currentColor;
+  vertical-align: -0.15em;
+  animation: typewriter-cursor 0.8s steps(2, start) infinite;
+}
+
+@keyframes typewriter-cursor {
+  to {
+    visibility: hidden;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #typewriter-text::after {
+    animation: none;
+  }
+}
+
+.coffee-product-card {
+  width: min(100%, 400px);
+  color: #111;
+}
+
+.coffee-product-image {
+  position: relative;
+  display: grid;
+  aspect-ratio: 0.68;
+  place-items: center;
+  overflow: hidden;
+  border-radius: 36px;
+  background: #f5f5f7;
+  padding: 36px;
+}
+
+.coffee-product-badge {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  border-radius: 999px;
+  background: #e7e9ff;
+  padding: 12px 20px;
+  font-size: 1rem;
+}
+
+.coffee-product-photo {
+  width: 82%;
+  max-height: 72%;
+  border-radius: 14px;
+  object-fit: contain;
+}
+
+.coffee-product-details {
+  padding-top: 24px;
+}
+
+.coffee-product-brand {
+  font-size: 1rem;
+  letter-spacing: 0.04em;
+}
+
+.coffee-product-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.coffee-product-name,
+.coffee-product-price {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.coffee-product-price {
+  white-space: nowrap;
+}
+
+.coffee-pay-button {
+  margin-top: 20px;
+  border: 0;
+  border-radius: 999px;
+  background: #111;
+  padding: 12px 22px;
+  color: #fff;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 160ms ease, transform 160ms ease;
+}
+
+.coffee-pay-button:hover {
+  transform: translateY(-2px);
+  background: #333;
+}
+
+.coffee-pay-button:focus-visible {
+  outline: 3px solid #3b82f6;
+  outline-offset: 3px;
+}
+
+@media (max-width: 480px) {
+  .coffee-product-image {
+    border-radius: 30px;
+  }
+
+  .coffee-product-name,
+  .coffee-product-price {
+    font-size: 1.25rem;
+  }
+}

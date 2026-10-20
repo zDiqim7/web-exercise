@@ -1,0 +1,30 @@
+@import url('https://cdn.jsdelivr.net/npm/@fontsource-variable/jetbrains-mono@5.3.0/index.css');
+
+:root {
+  /* Background Utama */
+  --background: #D4E7FE;          /* Biru muda bawaan Neobrutalism */
+  --background-bone: #F5F2EB;     /* Warna krem/bone ala Mas Eko (pilih salah satu untuk BG) */
+
+  /* Text & Card */
+  --foreground: #000000;          /* Teks hitam pekat */
+  --card: #FFFFFF;                /* Latar belakang card putih */
+  --card-foreground: #000000;
+
+  /* Main Accent / Primary */
+  --primary: #3B82F6;             /* Biru terang (Tombol CTA utama) */
+  --primary-foreground: #FFFFFF;
+
+  /* Secondary & Decorative Accents */
+  --accent-pink: #FF70A6;         /* Pink Neobrutalism (buat badge/sticker/highlight) */
+  --accent-pink-foreground: #000000;
+  --accent-yellow: #FACC15;       /* Kuning Neobrutalism (buat badge/announcement) */
+  --accent-yellow-foreground: #000000;
+  --accent-gray: #edeff3;         /* Abu-abu netral (buat badge/announcement) */
+
+  /* Border & Structure */
+  --border: #000000;              /* Border & shadow hitam pekat */
+}
+
+* {
+  font-family: 'JetBrains Mono Variable', monospace;
+}
